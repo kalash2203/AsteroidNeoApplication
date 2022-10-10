@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/asteroidDetailsFragment"
+        android:name="com.example.asteroidneoapplication.ui.fragment.AsteroidDetailsFragment"
+        android:label="fragment_asteroid_details"
+        tools:layout="@layout/fragment_asteroid_details" >
+        <action
+            android:id="@+id/action_asteroidDetailsFragment_to_asteroidGraphFragment"
+            app:destination="@id/asteroidGraphFragment" />
+        <argument
+            android:name="asteroidData"
+            app:argType="com.example.asteroidneoapplication.models.AsteroidResponse" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.asteroidneoapplication.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_asteroidDetailsFragment"
+            app:destination="@id/asteroidDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/asteroidGraphFragment"
+        android:name="com.example.asteroidneoapplication.ui.fragment.AsteroidGraphFragment"
+        android:label="fragment_asteroid_graph"
+        tools:layout="@layout/fragment_asteroid_graph" />
+</navigation>
