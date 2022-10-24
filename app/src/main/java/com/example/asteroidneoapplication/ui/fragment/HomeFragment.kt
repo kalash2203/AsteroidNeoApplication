@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        (activity?.application as AsteroidApplication).applicationComponent.inject((requireActivity() as MainActivity))
+        (activity?.application as AsteroidApplication).applicationComponent.inject((this))
         mainViewModel= ViewModelProvider(this,mainViewModelFactory)
             .get(MainViewModel::class.java)
 
